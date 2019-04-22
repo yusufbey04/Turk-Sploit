@@ -75,6 +75,7 @@ class Bruter(object):
 
                     self.remove_browser(browser)
 
+
                 else:
                     if browser.start_time:
                         if time() - browser.start_time >= max_time_to_wait:
@@ -111,6 +112,7 @@ class Bruter(object):
                     browser = Browser(self.username, password, proxy)
                     browsers.append(browser)
                     self.bots_per_proxy += 1
+
 
                     if not is_attack_started:
                         self.display.info('Starting attack ...')
@@ -161,6 +163,7 @@ class Bruter(object):
                 sleep(1.5)
                 continue 
     
+
             for browser in self.browsers:          
                 
                 self.display.stats(browser.password, self.password_manager.attempts, len(self.browsers))
